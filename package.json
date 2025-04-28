@@ -1,0 +1,12 @@
+{
+  "name": "itachi-util",
+  "version": "1.0.0",
+  "description": "A library packed with useful features for ME.",
+  "main": "index.js",
+  "scripts": {
+    "play": "bun src/playground.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "doma-itachi",
+  "license": "MIT"
+}
