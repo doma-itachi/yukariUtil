@@ -1,5 +1,7 @@
-# itachiUtil
+# yukariUtil
 A library packed with useful features for \*\*ME\*\*.
+
+document: https://doma-itachi.github.io/itachiUtil/
 
 ## Features
 |features|description|status|

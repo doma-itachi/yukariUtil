@@ -29,7 +29,7 @@ export function hiraganaToKatakana(hiragana: string): string {
 
 /**
  * カタカナからひらがなに変換
- * @param hiragana カタカナを含む文字列
+ * @param katakana カタカナを含む文字列
  * @returns 置換された文字列
  */
 export function katakanaToHiragana(katakana: string): string {

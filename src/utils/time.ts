@@ -3,7 +3,7 @@ type TimeFormat =
     "hHMMSS" | //1:23:45
     "HHMM" | //01:23
     "hHMM" //1:23
-
+    
 export class Time{
     static set(hour: number, minute: number, second: number): number{
         return hour*3600 + minute*60+second;
