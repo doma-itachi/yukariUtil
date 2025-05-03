@@ -2,11 +2,23 @@
   "name": "itachi-util",
   "version": "1.0.0",
   "description": "A library packed with useful features for ME.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "play": "bun src/playground.ts",
+    "doc": "typedoc --entryPoints src/index.ts --out docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "doma-itachi",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typedoc": "^0.28.3",
+    "typescript": "^5.8.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module"
 }
