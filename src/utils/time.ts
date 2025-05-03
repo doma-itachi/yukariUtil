@@ -8,7 +8,6 @@ type TimeFormat =
  * 簡易的に時間(Dateではない)を管理するためのクラス
  * うるう年などの計算はされない
  * 計算がし易いようにnumber型で管理します
- * @exports
  * @class Time
  */
 export class Time{
