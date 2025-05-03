@@ -7,8 +7,8 @@ A library packed with useful features for \*\*ME\*\*.
 |Simplate|Replaces tagged characters. Template strings like|done|
 |Time|Manage time, not date. Too simple. Use numbers instead of classes|done|
 |Bench|The easiest way to measure script performance|done|
-|Logger|A simple logger for small-scale development.|not yet|
-|Cache|Simplest cache management. wow|not yet|
+|Logger|A simple logger for small-scale development.|done|
+|Cache|Simplest cache management. wow|done|
 |Match|Freedom from ternary operators|not yet|
 |Schedule execution|Make batchServer Fastest. like Cron|not yet|
 
