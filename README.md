@@ -1,7 +1,7 @@
 # yukariUtil
 A library packed with useful features for \*\*ME\*\*.
 
-document: https://doma-itachi.github.io/itachiUtil/
+document: https://doma-itachi.github.io/yukariUtil/
 
 ## Installation
 ```bash
