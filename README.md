@@ -3,6 +3,11 @@ A library packed with useful features for \*\*ME\*\*.
 
 document: https://doma-itachi.github.io/itachiUtil/
 
+## Installation
+```bash
+npm i yukari-util
+```
+
 ## Features
 |features|description|status|
 |-|-|-|
