@@ -16,6 +16,10 @@ type LoggerOptions = {
 export class Logger {
     private loggerName: string;
     private options: LoggerOptions;
+    public static globalOptions: Required<LoggerOptions> = {
+        showStatus: false,
+        showTimestamps: false,
+    };
 
     /**
      * Loggerクラスのインスタンスを生成します
@@ -29,10 +33,12 @@ export class Logger {
 
     private createLogPrefix(status: string) {
         return `${
-            this.options.showTimestamps
+            this.options.showTimestamps ?? Logger.globalOptions.showTimestamps
                 ? `[${new Date().toLocaleString("ja-JP")}]`
                 : ""
-        }${this.options.showStatus ? `[${status}]` : ""}[${this.loggerName}]`;
+        }${this.options.showStatus ?? Logger.globalOptions.showStatus
+            ? `[${status}]`
+            : ""}[${this.loggerName}]`;
     }
 
     /**
