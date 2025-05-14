@@ -1,4 +1,15 @@
-export type SimplateTemplate = Record<string, any>;
+type ExtractTags<T extends string> = 
+    T extends `${infer _Start}\${${infer Tag}}${infer Rest}`
+        ? Tag | ExtractTags<Rest>
+        : never;
+
+type SimplateTemplate<T> = T extends string
+    ? string extends T
+        ? Record<string, any>
+        : {
+            [K in ExtractTags<T>]: string;
+        }
+    : never;
 
 /**
  * Simplate形式の文字列に変数を注入します
@@ -9,7 +20,7 @@ export type SimplateTemplate = Record<string, any>;
  * const text = "今日は${now}だよ";
  * console.log(simplate(text, {now: new Date().toLocaleDateString()}));
  */
-export function simplate(text: string, templates: SimplateTemplate): string {
+export function simplate<T extends string>(text: T, templates: SimplateTemplate<T>): string {
     const regex = /\${.+?}/g;
     const tags = text.match(regex);
     const split = text.split(regex);
