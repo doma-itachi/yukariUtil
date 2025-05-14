@@ -19,6 +19,7 @@ type SimplateTemplate<T> = T extends string
  * @example
  * const text = "今日は${now}だよ";
  * console.log(simplate(text, {now: new Date().toLocaleDateString()}));
+ * const text2 = `テンプレートリテラルにはこうします\${tag}`
  */
 export function simplate<T extends string>(text: T, templates: SimplateTemplate<T>): string {
     const regex = /\${.+?}/g;

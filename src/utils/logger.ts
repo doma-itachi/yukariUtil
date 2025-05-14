@@ -11,11 +11,22 @@ type LoggerOptions = {
 
 /**
  * コンソールにログを出力するクラス
- * @class Logger
  */
 export class Logger {
     private loggerName: string;
+    /**
+     * オプション
+     * @property showStatus [INFO]などのステータスを表示する
+     * @property showTimestamps [2025/5/14 14:50:00]のようなタイムスタンプを表示する
+     */
     private options: LoggerOptions;
+
+    /**
+     * グローバルオプション  
+     * インスタンスにオプションが指定されていない場合の既定値です
+     * @property showStatus [INFO]などのステータスを表示する
+     * @property showTimestamps [2025/5/14 14:50:00]のようなタイムスタンプを表示する
+     */
     public static globalOptions: Required<LoggerOptions> = {
         showStatus: false,
         showTimestamps: false,
@@ -23,7 +34,7 @@ export class Logger {
 
     /**
      * Loggerクラスのインスタンスを生成します
-     * @param {string} loggerName - ロガーを識別するための名前
+     * @param {string} loggerName - ロガーの識別名
      * @param {LoggerOptions} [options={}] - ロガーの動作をカスタマイズするオプション
      */
     constructor(loggerName: string, options: LoggerOptions = {}) {

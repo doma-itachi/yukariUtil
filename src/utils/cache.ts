@@ -1,9 +1,11 @@
 /**
- * 指定された期間、値をキャッシュする汎用クラス
+ * 指定された期間、値をキャッシュする汎用クラス  
  * 値の取得処理（同期/非同期）をラップし、有効期限内のアクセスではキャッシュされた値を返します
  *
- * @class Cache
  * @template T キャッシュされる値の型
+ * @example
+ * const cache = new Cache(async()=>await fakeFetch(), 1000) // expires in 1s
+ * const value = await cache.get();
  */
 export class Cache<T> {
     private value: T | null = null;
@@ -23,10 +25,9 @@ export class Cache<T> {
     }
 
     /**
-     * キャッシュされた値を取得します
-     * キャッシュが存在し、有効期限内であればその値を返します
+     * キャッシュされた値を取得します  
+     * キャッシュが存在し、有効期限内であればその値を返します  
      * キャッシュが無効な場合や期限切れの場合は、コンストラクタで指定された`getter`関数を呼び出して新しい値を取得・キャッシュし、その値を返します
-     * 複数の`get`呼び出しが同時に発生した場合、`getter`の実行は一度だけ行われ、結果が共有されます
      * @returns {Promise<T>} キャッシュされた値、または新しく取得された値を解決するPromise
      */
     async get(): Promise<T> {
@@ -52,7 +53,7 @@ export class Cache<T> {
     }
 
     /**
-     * 現在のキャッシュをクリアします。
+     * 現在のキャッシュをクリアします。  
      * このメソッド呼び出し後、次に`get`が呼ばれた際には、強制的に`getter`関数が実行されます
      */
     clear() {

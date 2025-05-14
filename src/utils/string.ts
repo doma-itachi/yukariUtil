@@ -45,6 +45,9 @@ export function katakanaToHiragana(katakana: string): string {
  * @param pattern 検索する文字列
  * @param ratioThreshold しきい値（例: 0.2 は20%）
  * @returns pattern が text の中で ratioThreshold 以上の割合を占めていれば true、それ以外は false
+ * @example
+ * includesWithRatio("aaaaatextaaaaa", "text", 0.6) // false
+ * includesWithRatio("atexta", "text", 0.6) // true
  */
 export function includesWithRatio(
     text: string,
