@@ -5,7 +5,7 @@
  * @param retryFunc リトライが発生したときに実行される関数（ユースケース：トークンの再発行など）
  * @returns getterの戻り値
  */
-export async function retry<T>(getter: ()=>Promise<T> | T, retryCount: number = 5, retryFunc?: ()=>Promise<T> | T): Promise<T> {
+export async function retry<T>(getter: ()=>Promise<T> | T, retryCount: number = 5, retryFunc?: Function): Promise<T> {
     let lastThrow: any;
     for(let i = 0; i < retryCount; i++ ) {
         try {
@@ -15,7 +15,7 @@ export async function retry<T>(getter: ()=>Promise<T> | T, retryCount: number = 
         catch(e) {
             lastThrow = e;
         }
-        
+
         if(i < retryCount-1) {
             retryFunc?.();
         }
