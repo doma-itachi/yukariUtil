@@ -17,7 +17,7 @@ export async function retry<T>(getter: ()=>Promise<T> | T, retryCount: number = 
         }
 
         if(i < retryCount-1) {
-            retryFunc?.();
+            await retryFunc?.();
         }
     }
     throw lastThrow;
